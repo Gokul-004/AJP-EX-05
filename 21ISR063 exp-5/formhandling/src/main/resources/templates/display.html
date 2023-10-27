@@ -1,0 +1,27 @@
+<html >
+    <head>
+        <title>My profile</title>
+        <style>
+            body{
+                text-align: center;
+                color:  rgb(214, 236, 17);
+            }
+            
+            
+        </style>
+    </head>
+    <body bgcolor="black">
+        <h1>Registeration Form</h1>
+      <h3>  Your name is :<span th:text="${user.name}"></span><br><br>
+        Your email is :<span th:text="${user.email}"></span><br><br>
+        Your Password is (Don't Forgot):<span th:text="${user.Password}"></span><br><br>
+        Your Dob is :<span th:text="${user.DOB}"></span><br><br>
+        Your Gender is :<span th:text="${user.Gender}"></span><br><br>
+       Location is :<span th:text="${user.Location}"></span><br><br>
+       Your Feedback is :<span th:text="${user.note}"></span><br><br>
+       Mobiles:<span th:text="${user.Mobiles}"></span>
+    </h3>
+       
+        
+    </body>
+</html>

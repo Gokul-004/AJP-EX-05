@@ -1,0 +1,57 @@
+<html xmlns:th="http:www.thymeleaf.org">
+    <head>
+        <title>Registration Form</title>
+        <style>
+            h{
+                color: rgb(214, 236, 17);
+                font-size: 15pt;
+            }
+            body
+            {
+                text-align: center;
+                
+            }
+            
+            button[type="submit"]:hover
+           
+{background-color: #555;
+}
+button[type="reset"]:hover
+           
+           {background-color: #555;
+           }
+        </style>
+    </head>
+    <body bgcolor="black">
+        <form th:action="@{/register}"  method="post" th:object="${user}">
+            <h><h1><br>Register Form</h1>
+     Name<br><input type="text" th:field="*{name}"/><br><br>
+        Email<br><input type="email" th:field="*{email}"/><br><br>
+        Password<br><input type="password" th:field="*{Password}"/><br><br>
+        DOB <br><input type="date" th:field="*{DOB}"/><br><br>
+        Gender <br><input type="radio" id="male"  name="Gender" value="male"  th:field="*{Gender}">Male
+         <input type="radio" id="Female"  name="Gender" value="Female" th:field="*{Gender}">Female <br><br>
+        <div class="m">
+         Mobiles: <br><br>
+         <input type="checkbox" id="oppo" name="Mobiles" value="oppo">
+         <label for="oppo">OPPO</label><br>
+         <input type="checkbox" id="vivo" name="Mobiles" value="vivo">
+         <label for="vivo">VIVO</label><br>
+         <input type="checkbox" id="Samsung" name="Mobiles" value="Samsung">
+         <label for="Samsung">SAMSUNG</label><br>
+         <input type="checkbox" id="apple" name="apple" value="apple">
+         <label for="apple">Apple</label><br>
+         <input type="checkbox" id="oneplus" name="oneplus" value="oneplus">
+         <label for="oneplus">ONEPLUS</label><br></div>
+        Location:
+        <select th:field="*{Location}">
+            <option th:each="p:${loclist}" th:value="${p}" th:text="${p}"></option>
+        </select><br><br>
+         Feedback: <br>
+        <textarea  th:field="*{note}" cols="30" rows="10"></textarea>
+        <br><br>
+        <br><button type="submit">Submit</button></h> 
+        <button type="reset">Reset</button>
+        </form>
+    </body>
+</html>
